@@ -1,0 +1,4 @@
+﻿  Destructor.cpp
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_Object\Destructor\Destructor.cpp(28,9): warning C4150: deletion of pointer to incomplete type 'Message'; no destructor called
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_Object\Destructor\Destructor.cpp(3,7): message : see declaration of 'Message'
+  Destructor.vcxproj -> D:\Exercise_Cpp_OOP_online\lesson_theory\Class_Object\Destructor\x64\Debug\Destructor.exe
