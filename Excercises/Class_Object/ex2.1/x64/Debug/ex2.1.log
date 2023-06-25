@@ -1,0 +1,4 @@
+﻿  ex2.1.cpp
+D:\Exercise_Cpp_OOP_online\Excercises\Class_Object\ex2.1\ex2.1.cpp(167,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Exercise_Cpp_OOP_online\Excercises\Class_Object\ex2.1\ex2.1.cpp(212,44): warning C4305: 'argument': truncation from 'double' to 'float'
+  ex2.1.vcxproj -> D:\Exercise_Cpp_OOP_online\Excercises\Class_Object\ex2.1\x64\Debug\ex2.1.exe
