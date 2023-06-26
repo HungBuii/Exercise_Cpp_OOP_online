@@ -1,0 +1,3 @@
+﻿  Abstraction.cpp
+D:\Exercise_Cpp_OOP_online\lesson_theory\Abstraction\Abstraction\Abstraction.cpp(74,56): warning C4305: 'argument': truncation from 'double' to 'float'
+  Abstraction.vcxproj -> D:\Exercise_Cpp_OOP_online\lesson_theory\Abstraction\Abstraction\x64\Debug\Abstraction.exe
