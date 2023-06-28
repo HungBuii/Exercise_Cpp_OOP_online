@@ -36,7 +36,7 @@ private:
     float area;
 };
 
-class Mobihome : public Vehicle, public House
+class Mobihome : public Vehicle, public House // nen ke thua 2 class rieng biet va khong ke thua 1 class nao khac
 {
 
 };
