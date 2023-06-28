@@ -1,0 +1,3 @@
+﻿  Multi_Inheritance.cpp
+D:\Exercise_Cpp_OOP_online\lesson_theory\Inheritance\Multi_Inheritance\Multi_Inheritance.cpp(32,16): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Multi_Inheritance.vcxproj -> D:\Exercise_Cpp_OOP_online\lesson_theory\Inheritance\Multi_Inheritance\x64\Debug\Multi_Inheritance.exe
