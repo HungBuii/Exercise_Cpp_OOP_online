@@ -1,0 +1,10 @@
+﻿  Final_class_and_Final_method.cpp
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(4,1): error C3197: 'final': can only be used in definitions
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(3,21): error C2079: 'Car' uses undefined class 'Vehicle'
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(5,1): error C2059: syntax error: 'public'
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(6,16): error C2143: syntax error: missing ';' before '{'
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(6,16): error C2447: '{': missing function header (old-style formal list?)
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(10,1): error C2059: syntax error: 'private'
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(12,1): error C2059: syntax error: '}'
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(12,1): error C2143: syntax error: missing ';' before '}'
+D:\Exercise_Cpp_OOP_online\lesson_theory\Class_method_special\Final_class_and_Final_method\Final_class_and_Final_method.cpp(15,1): error C2504: 'Vehicle': base class undefined
