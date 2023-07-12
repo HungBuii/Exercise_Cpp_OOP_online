@@ -1,0 +1,3 @@
+﻿  Constructor_member_Initialization_list.cpp
+D:\Exercise_Cpp_OOP_online\lesson_theory\Optimization\Constructor_member_Initialization_list\Constructor_member_Initialization_list.cpp(13,1): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Constructor_member_Initialization_list.vcxproj -> D:\Exercise_Cpp_OOP_online\lesson_theory\Optimization\Constructor_member_Initialization_list\x64\Debug\Constructor_member_Initialization_list.exe
