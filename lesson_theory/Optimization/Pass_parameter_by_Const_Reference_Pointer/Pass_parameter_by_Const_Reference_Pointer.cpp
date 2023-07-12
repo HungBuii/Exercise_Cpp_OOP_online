@@ -20,7 +20,8 @@ struct RegisterInfo
 class Vehicle
 {
 public:
-    Vehicle(const std::string name, const RegisterInfo& info) : modelName(name), 
+    // std::string thuc chat cung la 1 class nen co the su dung references de tang do toi uu chuong trinh chay
+    Vehicle(const std::string& name, const RegisterInfo& info) : modelName(name), 
                                                    ownerName(info.ownerName), 
                                                    license(info.license) {
     // Neu de la RegisterInfo info thi se xuat hien copy constructor do phai copy du lieu tu info(RegisterInfo) sang cac thuoc tinh cua Vehicle nhu ownerName = info.ownerName
