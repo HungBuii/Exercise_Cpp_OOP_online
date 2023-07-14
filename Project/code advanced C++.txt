@@ -1,0 +1,266 @@
+#include <iostream>
+#include <string>
+
+class Test
+{
+public:
+    Test() { }
+
+    void setTime(int time) {
+        time_ = time;
+    }
+
+    int getTime()
+    {
+        return time_;
+    }
+
+    virtual void show_time() = 0;
+
+    virtual void questions() = 0;
+
+    virtual void answers() = 0;
+
+private:
+    int time_;
+    float score_;
+};
+
+class Test_15_minutes : public Test
+{
+public:
+    Test_15_minutes() {
+        
+    }
+
+    virtual void show_time() {
+        setTime(15);
+        std::cout << "\nThis test has a duration of " << getTime() << " minutes!\n";
+    }
+
+    virtual void questions() {
+
+        std::cout << "\n* Part 1: Multiple-choice questions\n";
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "1. In the top 20 most expensive transfers of all time, how many are Real Madrid involved in (both buying and selling)?\n";
+        std::cout << "A. 5 \t B. 6 \t C. 7 \t D. 8 \n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "2. What is the most expensive player sale Real Madrid has ever made?\n";
+        std::cout << "A. Robinho \t B. Angle Di Maria \t C. Mesult Ozil \t D. Gonzalo Higuain \n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "3. Which of the 4 options below is NOT included in the top 20 most expensive player purchases of Real Madrid?\n";
+        std::cout << "A. Ronaldo de Lima \t B. Asier Illarramendi \t C. Mateo Kovacic \t D. Mahamadou Diarra \n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "4. How many players has Real Madrid bought during their career with Ballon d'Or?\n";
+        std::cout << "A. 6 \t B. 7 \t C. 8 \t D. 9 \n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "5. After Luis Figo, who is the most expensive player bought by Real Madrid directly from Barcelona?\n";
+        std::cout << "A. Javier Saviola \t B. Michael Laudrup \t C. Bernd Schuster \t D. Luis Enrique \n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+    }
+
+    virtual void answers() {
+        std::cout << "\n* Part 1: Multiple-choice questions\n";
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "1. In the top 20 most expensive transfers of all time, how many are Real Madrid involved in (both buying and selling)?\n";
+        std::cout << "Correct answer: C. 7 \n";
+        std::cout << "7 cases (Gareth Bale, Cristiano Ronaldo, James Rodriguez, Mesut Ozil, Kaka, Zinedine Zidane, Angel Di Maria).\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "2. What is the most expensive player sale Real Madrid has ever made?\n";
+        std::cout << "Correct answer: B. Angle Di Maria \n";
+        std::cout << "Angel Di Maria, who was sold by Real Madrid for 59.7 million euro to Manchester United.\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "3. Which of the 4 options below is NOT included in the top 20 most expensive player purchases of Real Madrid?\n";
+        std::cout << "Correct answer: A. Ronaldo de Lima \n";
+        std::cout << "Ronaldo of Brazil joined Real Madrid from Inter Milan for euro20m in 2002. The man in 20th place is Angel Di Maria (21m euro, from Benfica).\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "4. How many players has Real Madrid bought during their career with Ballon d'Or?\n";
+        std::cout << "Correct answer: D. 9 \n";
+        std::cout << "9 players (Alfredo Di Stefano, Raymond Kopa, Ronaldo of Brazil, Zinedine Zidane, Luis Figo, Michael Owen, Fabio Cannavaro, Kaka, Cristiano Ronaldo).\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "5. After Luis Figo, who is the most expensive player bought by Real Madrid directly from Barcelona?\n";
+        std::cout << "Correct answer: B. Michael Laudrup \n";
+        std::cout << "Michael Laudrup joined Real Madrid directly from Barcelona in 1995 for 8.16 million euro.\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+    }
+private:
+    
+};
+
+class Test_30_minutes : public Test_15_minutes
+{
+public:
+    Test_30_minutes() {
+
+    }
+
+    virtual void show_time() {
+        setTime(30);
+        std::cout << "\nThis test has a duration of " << getTime() << " minutes!\n";
+    }
+
+    virtual void questions() {
+        Test_15_minutes::questions();
+
+        std::cout << "\n* Part 2: Essay questions\n";
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+        
+        std::cout << "1. Who is the fastest hat-trick player in Premier League history?\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "2. What year was the first English Premier League season since the name change from First Division?\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "3. Which team won the English Premier League first?\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+    }
+
+    virtual void answers() {
+        Test_15_minutes::answers();
+        std::cout << "\n* Part 2: Essay questions\n";
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+        
+        std::cout << "1. Who is the fastest hat-trick player in Premier League history?\n";
+        std::cout << "Answer: Sadio Mane (2 minutes 56 seconds in the match between Southampton and Aston Villa in 2015)\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+        
+        std::cout << "2. What year was the first English Premier League season since the name change from First Division?\n";
+        std::cout << "Answer: 1992-1993\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "3. Which team won the English Premier League first?\n";
+        std::cout << "Answer: Manchester United\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+    }
+private:
+
+};
+
+class Test_45_minutes : public Test_30_minutes
+{
+public:
+    Test_45_minutes() {
+
+    }
+
+    virtual void show_time() {
+        setTime(45);
+        std::cout << "\nThis test has a duration of " << getTime() << " minutes!\n";
+    }
+
+    virtual void questions() {
+        Test_30_minutes::questions();
+
+        std::cout << "4. How many clubs competed in the first English Premier League season?\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "5. Which three players share the Golden Shoe award in 2018/19?\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "6. The fastest goal in Premier League history was scored at 7.69 seconds. Who made it?\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+    }
+
+    virtual void answers() {
+        Test_30_minutes::answers();
+
+        std::cout << "4. How many clubs competed in the first English Premier League season?\n";
+        std::cout << "Answer: 22\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "5. Which three players share the Golden Shoe award in 2018/19?\n";
+        std::cout << "Answer: Pierre-Emerick Aubameyang, Mohamed Salah and Sadio Mane\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+
+        std::cout << "6. The fastest goal in Premier League history was scored at 7.69 seconds. Who made it?\n";
+        std::cout << "Answer: Shane Long (in Southampton vs Watford season 2018/19)\n";
+
+        std::cout << "----------------------------------------------------------------------------------------------------------------------\n";
+    }
+private:
+
+};
+int main()
+{
+    do
+    {
+        int t;
+        std::cout << "\nTime test score: ";
+        std::cin >> t;
+        if (t == 15) {
+            Test_15_minutes* test_15 = new Test_15_minutes;
+            test_15->show_time();
+            test_15->questions();
+
+            bool select;
+            std::cout << "\nDo you want to display the results of this test " << t << "?(0. No | 1. Yes) \n";
+            std::cin >> select;
+            if (select == 1) {
+                test_15->answers();
+            }
+            else continue; // thoat khoi vong lap hien tai voi t = 15;
+        }
+        else if (t == 30) {
+            Test_30_minutes* test_30 = new Test_30_minutes;
+            test_30->show_time();
+            test_30->questions();
+
+            bool select;
+            std::cout << "\nDo you want to display the results of this test " << t << "?(0. No | 1. Yes) \n";
+            std::cin >> select;
+            if (select == 1) {
+                test_30->answers();
+            }
+            else continue;
+        }
+        else if (t == 45) {
+            Test_45_minutes* test_45 = new Test_45_minutes;
+            test_45->show_time();
+            test_45->questions();
+
+            bool select;
+            std::cout << "\nDo you want to display the results of this test " << t << "?(0. No | 1. Yes) \n";
+            std::cin >> select;
+            if (select == 1) {
+                test_45->answers();
+            }
+            else continue;
+        }
+        else {
+            std::cout << "\nThere is no such test. Try re-entering\n";
+        }
+    } while (true);
+
+}
+
