@@ -5,6 +5,22 @@
 #include "Test_30_minutes.h"
 #include "Test_45_minutes.h"
 
+Test* createTest(int t)
+{
+    if (t == 15) {
+        Test* test_15 = new Test_15_minutes;
+        return test_15;
+    }
+    else if (t == 30) {
+        Test* test_30 = new Test_30_minutes;
+        return test_30;
+    }
+    else if (t == 45) {
+        Test* test_45 = new Test_45_minutes;
+        return test_45;
+    }
+}
+
 int main()
 {
     do
@@ -13,41 +29,41 @@ int main()
         std::cout << "\nTime test score(15 minutes, 30 minutes, 45 minutes or 0->exit): ";
         std::cin >> t;
         if (t == 15) {
-            Test_15_minutes* test_15 = new Test_15_minutes;
-            test_15->show_time_and_score();
-            test_15->questions();
+            Test* test = createTest(t);
+            test->show_time_and_score();
+            test->questions();
 
-            bool select;
-            std::cout << "\nDo you want to display the results of this test " << t << "?(0. No | 1. Yes) \n";
+            bool select = 0;
+            std::cout << "\nDo you want to display the results of this test " << t << " minutes?(0. No | 1. Yes) \n";
             std::cin >> select;
             if (select == 1) {
-                test_15->answers();
+                test->answers();
             }
             else continue; // exit the loop with t = 15;
         }
         else if (t == 30) {
-            Test_30_minutes* test_30 = new Test_30_minutes;
-            test_30->show_time_and_score();
-            test_30->questions();
+            Test* test = createTest(t);
+            test->show_time_and_score();
+            test->questions();
 
-            bool select;
-            std::cout << "\nDo you want to display the results of this test " << t << "?(0. No | 1. Yes) \n";
+            bool select = 0;
+            std::cout << "\nDo you want to display the results of this test " << t << " minutes?(0. No | 1. Yes) \n";
             std::cin >> select;
             if (select == 1) {
-                test_30->answers();
+                test->answers();
             }
             else continue;
         }
         else if (t == 45) {
-            Test_45_minutes* test_45 = new Test_45_minutes;
-            test_45->show_time_and_score();
-            test_45->questions();
+            Test* test = createTest(t);
+            test->show_time_and_score();
+            test->questions();
 
             bool select;
-            std::cout << "\nDo you want to display the results of this test " << t << "?(0. No | 1. Yes) \n";
+            std::cout << "\nDo you want to display the results of this test " << t << " minutes?(0. No | 1. Yes) \n";
             std::cin >> select;
             if (select == 1) {
-                test_45->answers();
+                test->answers();
             }
             else continue;
         }

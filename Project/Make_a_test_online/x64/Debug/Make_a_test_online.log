@@ -1,4 +1,3 @@
 ﻿  Make_a_test_online.cpp
-  Test_45_minutes.cpp
-  Generating Code...
+D:\Exercise_Cpp_OOP_online\Project\Make_a_test_online\Make_a_test_online.cpp(22): warning C4715: 'createTest': not all control paths return a value
   Make_a_test_online.vcxproj -> D:\Exercise_Cpp_OOP_online\Project\Make_a_test_online\x64\Debug\Make_a_test_online.exe
