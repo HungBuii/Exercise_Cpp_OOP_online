@@ -40,6 +40,7 @@ int main()
                 test->answers();
             }
             else continue; // exit the loop with t = 15;
+            delete test;
         }
         else if (t == 30) {
             Test* test = createTest(t);
@@ -53,6 +54,7 @@ int main()
                 test->answers();
             }
             else continue;
+            delete test;
         }
         else if (t == 45) {
             Test* test = createTest(t);
@@ -66,6 +68,7 @@ int main()
                 test->answers();
             }
             else continue;
+            delete test;
         }
         else if (t == 0) {
             return 0;
@@ -74,6 +77,8 @@ int main()
             std::cout << "\nThere is no such test. Try re-entering\n";
         }
     } while (true);
+
+
 
     return 0;
 }

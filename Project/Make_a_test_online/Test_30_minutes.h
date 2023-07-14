@@ -4,9 +4,9 @@
 class Test_30_minutes : public Test_15_minutes
 {
 public:
-    Test_30_minutes() {
+    Test_30_minutes() { }
 
-    }
+    virtual ~Test_30_minutes() { }
 
     virtual void show_time_and_score();
 

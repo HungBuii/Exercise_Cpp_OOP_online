@@ -5,6 +5,8 @@ class Test
 public:
     Test() { }
 
+    virtual ~Test() { }
+
     void setTime(int time);
 
     int getTime();
