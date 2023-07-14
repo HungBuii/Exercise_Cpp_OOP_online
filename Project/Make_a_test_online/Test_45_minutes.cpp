@@ -2,9 +2,10 @@
 #include "Test.h"
 #include "Test_45_minutes.h"
 
-void Test_45_minutes::show_time() {
+void Test_45_minutes::show_time_and_score() {
     setTime(45);
-    std::cout << "\nThis test has a duration of " << getTime() << " minutes!\n";
+    setScore(11);
+    std::cout << "\nThis test has a duration of " << getTime() << " minutes and highest score is " << getScore() << "!\n";
 }
 
 void Test_45_minutes::questions() {

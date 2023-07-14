@@ -8,3 +8,12 @@
     {
         return time_;
     }
+
+    void Test::setScore(float score) {
+        score_ = score;
+    }
+
+    float Test::getScore()
+    {
+        return score_;
+    }

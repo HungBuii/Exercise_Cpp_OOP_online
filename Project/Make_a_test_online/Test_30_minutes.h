@@ -8,7 +8,7 @@ public:
 
     }
 
-    virtual void show_time();
+    virtual void show_time_and_score();
 
     virtual void questions();
 

@@ -3,9 +3,10 @@
 #include "Test_30_minutes.h"
 
 
-void Test_30_minutes::show_time() {
+void Test_30_minutes::show_time_and_score() {
     setTime(30);
-    std::cout << "\nThis test has a duration of " << getTime() << " minutes!\n";
+    setScore(8);
+    std::cout << "\nThis test has a duration of " << getTime() << " minutes and highest score is " << getScore() << "!\n";
 }
 
 void Test_30_minutes::questions() {

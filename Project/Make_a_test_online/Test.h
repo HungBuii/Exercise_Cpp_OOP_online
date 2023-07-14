@@ -9,7 +9,11 @@ public:
 
     int getTime();
 
-    virtual void show_time() = 0;
+    void setScore(float score);
+
+    float getScore();
+
+    virtual void show_time_and_score() = 0;
 
     virtual void questions() = 0;
 

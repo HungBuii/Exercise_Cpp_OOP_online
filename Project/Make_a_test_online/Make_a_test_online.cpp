@@ -14,7 +14,7 @@ int main()
         std::cin >> t;
         if (t == 15) {
             Test_15_minutes* test_15 = new Test_15_minutes;
-            test_15->show_time();
+            test_15->show_time_and_score();
             test_15->questions();
 
             bool select;
@@ -27,7 +27,7 @@ int main()
         }
         else if (t == 30) {
             Test_30_minutes* test_30 = new Test_30_minutes;
-            test_30->show_time();
+            test_30->show_time_and_score();
             test_30->questions();
 
             bool select;
@@ -40,7 +40,7 @@ int main()
         }
         else if (t == 45) {
             Test_45_minutes* test_45 = new Test_45_minutes;
-            test_45->show_time();
+            test_45->show_time_and_score();
             test_45->questions();
 
             bool select;
