@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="createTest.cpp" />
     <ClCompile Include="Make_a_test_online.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="Test_15_minutes.cpp" />

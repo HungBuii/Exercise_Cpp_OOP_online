@@ -36,6 +36,9 @@
     <ClCompile Include="Test.cpp">
       <Filter>Source Files\Decorator</Filter>
     </ClCompile>
+    <ClCompile Include="createTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
