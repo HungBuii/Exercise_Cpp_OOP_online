@@ -1,276 +1,269 @@
-#include <iostream>
+﻿#include <iostream>
 #include <string>
 #include <vector>
+
+using namespace std;
 
 class Employee
 {
 public:
+    static int numEmp;
 
-	Employee() {
-		name = "Unknown";
-		salary = 1000;
-		expYears = 0;
-	}
+    Employee() 
+    {
+        basic_salary = 1000;
+        experiences = 0;
+    }
 
-	Employee(std::string _name, int _expYears) {
-		name = _name;
-		salary = 1000;
-		expYears = _expYears;
-	}
+    std::string getName() { return name; }
+    void setName(std::string _name) {
+        name = _name;
+    }
 
-	void setName(std::string _name) {
-		name = _name;
-	}
+    double getSalary() { return basic_salary; }
+    void setSalary(double _basic_salary) {
+        basic_salary = _basic_salary;
+    }
 
-	std::string getName() {
-		return name;
-	}
+    int getExp() { return experiences; }
+    void setExp(int _experiences) {
+        experiences = _experiences;
+    }
 
-	void setSalary(double _salary) {
-		salary = _salary;
-	}
+    virtual void inputInfo() {
+        std::cout << "Enter name: ";
+        std::getline(std::cin, name);
 
-	double getSalary() {
-		return salary;
-	}
+        std::cout << "Enter number of experience years: ";
+        std::cin >> experiences;
 
-	void setExpYears(int _expYears) {
-		expYears = _expYears;
-	}
+        std::cin.ignore();
+    }
 
-	int getExpYears() {
-		return expYears;
-	}
+    virtual void printInfo() {
+        std::cout << "Name: " << name << "\n";
+        std::cout << "Experiences: " << experiences << "\n";
+    }
 
-	virtual void inputData() {
-		std::cin.ignore();
-		std::cout << "Enter name: ";
-		std::getline(std::cin, name);
+    virtual void printSalary() {
+        std::cout << "Basic salary: " << basic_salary << "\n";
+    }
 
-		std::cout << "Enter number of experience years: ";
-		std::cin >> expYears;
-	}
-
-	virtual void printInfo() {
-		std::cout << "Name: " << name << "\n";
-		std::cout << "Salary: " << salary << "\n";
-		std::cout << "Number of experience years: " << expYears << "\n";
-	}
-
-private:
-	std::string name;
-	double salary;
-	int expYears;
+protected:
+    std::string name;
+    double basic_salary;
+    int experiences;
 };
 
-class HR_staff : public Employee
-{
-public:
-	HR_staff() {
-
-	}
-
-	HR_staff(std::string _name, int _expYears) : Employee(_name, _expYears) {
-
-	}
-
-private:
-
-};
-
-class Programmer : public Employee
+class HR : public Employee
 {
 public:
 
-	Programmer() {
+    HR() { numEmp++; }
 
-	}
-
-	Programmer(std::string _name, int _expYears) : Employee(_name, _expYears) {
-
-	}
-
-	void printInfo() override {
-		std::cout << "Name: " << getName() << "\n";
-		std::cout << "Salary: " << (getSalary() + (getSalary() * 15 / 100)) << "\n";
-		std::cout << "Number of experience years: " << getExpYears() << "\n";
-	}
 
 private:
 
+
 };
 
-class BusinessMan : public Employee
+class IT : public Employee
 {
 public:
+    IT() { numEmp++; }
 
-	BusinessMan() {
-
-	}
-
-	BusinessMan(std::string _name, int _expYears, int _contracts) : Employee(_name, _expYears) {
-		contracts = _contracts;
-	}
-
-	void inputData() override {
-		std::cin.ignore();
-		std::cout << "Enter name: "; std::string name;
-		std::getline(std::cin, name); setName(name);
-
-		std::cout << "Enter number of experience years: "; int expYears;
-		std::cin >> expYears; setExpYears(expYears);
-
-		std::cout << "Enter number of contracts completed in this month: ";
-		std::cin >> contracts;
-	}
-
-	void printInfo() override {
-		std::cout << "Name: " << getName() << "\n";
-		std::cout << "Number of experience years: " << getExpYears() << "\n";
-		std::cout << "Number of contracts completed in this month: " << contracts << "\n";
-		std::cout << "Salary: " << (getSalary() + (getSalary() * contracts / 100)) << "\n";
-	}
+    void printSalary() override {
+        std::cout << "Basic salary: " << basic_salary + basic_salary * 15 / 100 << "\n";
+    }
 
 private:
-	int contracts;
+
+
 };
+
+class Business : public Employee
+{
+public:
+    Business() 
+    {
+        numEmp++;
+        contact = 0;
+    }
+
+    int getContact() { return contact; }
+    void setContact(int _contact) {
+        contact = _contact;
+    }
+
+    void inputInfo() override {
+        std::cout << "Enter name: ";
+        std::getline(std::cin, name);
+
+        std::cout << "Enter number of experience years: ";
+        std::cin >> experiences;
+
+        std::cout << "Enter number of contact: ";
+        std::cin >> contact;
+
+        std::cin.ignore();
+    }
+
+    void printInfo() override {
+        std::cout << "Name: " << name << "\n";
+        std::cout << "Number of experience years: " << experiences << "\n";
+    }
+
+    void printSalary() override {
+        std::cout << "Number of contact " << contact << "\n";
+        std::cout << "Basic salary: " << basic_salary + basic_salary * contact / 100 << "\n";
+    }
+
+private:
+    int contact;
+
+};
+
+bool checkInputCharacters(std::string& _inputFirstChoice) {
+    for (int i = 0; i < _inputFirstChoice.length(); i++) {
+        if (!isdigit(_inputFirstChoice[i])) {
+            return false;
+            break;
+        }
+    }
+    return true;
+}
+
+void reInputCharacters(std::string& _inputFirstChoice) {
+    std::cout << "Re-enter your choice in here: ";
+    std::getline(std::cin, _inputFirstChoice);
+}
+
+void check_reInputCharacters(bool _c, int& _choice, std::string _inputChoice) {
+    while (!_c) {
+        reInputCharacters(_inputChoice);
+        _c = checkInputCharacters(_inputChoice);
+        if (_c) {
+            _choice = std::stoi(_inputChoice);
+            if (_choice < 0 || _choice > 5) {
+                reInputCharacters(_inputChoice);
+                _c = checkInputCharacters(_inputChoice);
+            }
+            break;
+        }
+    }
+}
+
+int Employee::numEmp = 0;
 
 int main()
 {
-	/*  HR_staff* hr = new HR_staff("Hung", 3);
-		hr->printInfo();
-		Programmer* coder = new Programmer("Ha", 2);
-		coder->printInfo();
-		BusinessMan* bm = new BusinessMan("Chung", 2, 3);
-		bm->printInfo();    */
+    // có thể sử dụng nhập int để đưa ra lựa chọn luôn không cần thông qua string. Đây check validation về số nhập vào để biết thêm nên sẽ hơi rườm rà
+    std::vector<Employee*> listEmployee;
+    do {
+        int choice = 0;
+        std::string inputChoice;
+        std::cout << "\nEnter your choice in here: ";
+        std::getline(std::cin, inputChoice);
+        bool c = checkInputCharacters(inputChoice);
+        if (c) {
+            choice = std::stoi(inputChoice);
+        }
+        else {
+            check_reInputCharacters(c, choice, inputChoice);
+        }
 
-//	Cach 1
+        switch (choice)
+        {
+            case 1:
+            {
+                int first_choice = 0;
+                std::string inputFirstChoice;
+                std::cout << "\nAdd a employee ?\n";
+                std::cout << "1. HR staff  2. Programmer  3. Business Man\n";
+                std::cout << "Enter no employee u want to add: ";
+                std::getline(std::cin, inputFirstChoice);
+                bool c1 = checkInputCharacters(inputFirstChoice);
+                if (c1) {
+                    first_choice = std::stoi(inputFirstChoice);
+                }
+                else {
+                    check_reInputCharacters(c1, first_choice, inputFirstChoice);
+                }
+                if (first_choice == 1) {
+                    HR* hr = new HR();
+                    hr->inputInfo();
+                    listEmployee.push_back(hr);
+                }
+                else if (first_choice == 2) {
+                    IT* iter = new IT();
+                    iter->inputInfo();
+                    listEmployee.push_back(iter);
+                }
+                else if (first_choice == 3) {
+                    Business* bm = new Business();
+                    bm->inputInfo();
+                    listEmployee.push_back(bm);
+                }
+                else {
+                    std::cout << "Invalid choice!\n";
+                }
+                break;
+            }
+            case 2:
+            {
+                std::cout << "\nEnter no u want to update: ";
+                int second_choice = 0;
+                std::string inputSecondChoice;
+                std::getline(std::cin, inputSecondChoice);
+                bool c2 = checkInputCharacters(inputSecondChoice);
+                if (c2) {
+                    second_choice = std::stoi(inputSecondChoice);
+                } else {
+                    reInputCharacters(inputSecondChoice);
+                }
 
-	/*int numsEmp = 0;
-	Employee* employee_list[100];
+                if (second_choice < Employee::numEmp) {
+                    listEmployee[second_choice]->inputInfo();
+                }
+                
+                break;
+            }
+            case 3:
+            {
+                std::cout << "\nEnter no u want to remove: ";
+                int third_choice = 0;
+                std::string inputThirdChoice;
+                std::getline(std::cin, inputThirdChoice);
+                bool c3 = checkInputCharacters(inputThirdChoice);
+                if (c3) {
+                    third_choice = std::stoi(inputThirdChoice);
+                }
+                else {
+                    reInputCharacters(inputThirdChoice);
+                }
+                listEmployee.erase(listEmployee.begin() + third_choice);
+                Employee::numEmp--;
+                break;
+            }
+            case 4: 
+            {
+                for (int i = 0; i < Employee::numEmp; i++) {
+                    std::cout << "\nNo " << i << ": \n";
+                    listEmployee[i]->printInfo();
+                    listEmployee[i]->printSalary();
+                }
+                std::cout << "\n";
+                break;
+            }
+            case 0:
+            {
+                std::cout << "Exit program!\n";
+                return 0;
+                break;
+            }
+        }
 
-	do {
-		int choice = 0;
-		std::cout << "-----------------------------";
-		std::cout << "\nEnter your choice in here: ";
-		std::cin >> choice;
+    } while (true);
 
-
-		switch (choice) {
-		case 1:
-			std::cout << "\nAdd a employee ?\n";
-			std::cout << "1. HR staff  2. Programmer  3. Business Man\n";
-			std::cout << "Enter no u want to add: ";
-			int choiceCase1;
-			std::cin >> choiceCase1;
-			std::cout << "\n";
-			if (choiceCase1 == 1) {
-				HR_staff* hr = new HR_staff();
-				hr->inputData();
-				employee_list[numsEmp++] = hr;
-			}
-			else if (choiceCase1 == 2) {
-				Programmer* coder = new Programmer();
-				coder->inputData();
-				employee_list[numsEmp++] = coder;
-			}
-			else if (choiceCase1 == 3) {
-				BusinessMan* bm = new BusinessMan();
-				bm->inputData();
-				employee_list[numsEmp++] = bm;
-			}
-			break;
-		case 2:
-			std::cout << "\nEnter no u want to update: "; int choiceCase2;
-			std::cin >> choiceCase2;
-			employee_list[choiceCase2]->inputData();
-			break;
-		case 3: 
-			std::cout << "\nEnter no u want to remove: "; int choiceCase3;
-			std::cin >> choiceCase3;
-			for (int i = choiceCase3; i < numsEmp; i++) {
-				employee_list[i] = employee_list[i + 1];
-			}
-			numsEmp--;
-			break;
-		case 4:
-			for (int i = 0; i < numsEmp; i++) {
-				std::cout << "\nNo " << i << ": \n";
-				employee_list[i]->printInfo();
-			}
-			std::cout << "\n";
-			break;
-		case 0:
-			std::cout << "Exit program!\n";
-			return 0;
-			break;
-		}
-		
-	} while (true);*/
-
-
-//	cach 2
-	int numsEmp = 0;
-	std::vector<Employee*> employee_list;
-
-	do {
-		int choice = 0;
-		std::cout << "-----------------------------";
-		std::cout << "\nEnter your choice in here: ";
-		std::cin >> choice;
-
-
-		switch (choice) {
-		case 1:
-			std::cout << "\nAdd a employee ?\n";
-			std::cout << "1. HR staff  2. Programmer  3. Business Man\n";
-			std::cout << "Enter no u want to add: ";
-			int choiceCase1;
-			std::cin >> choiceCase1;
-			std::cout << "\n";
-			if (choiceCase1 == 1) {
-				HR_staff* hr = new HR_staff();
-				hr->inputData();
-				employee_list.push_back(hr);
-				numsEmp++;
-			}
-			else if (choiceCase1 == 2) {
-				Programmer* coder = new Programmer();
-				coder->inputData();
-				employee_list.push_back(coder);
-				numsEmp++;
-			}
-			else if (choiceCase1 == 3) {
-				BusinessMan* bm = new BusinessMan();
-				bm->inputData();
-				employee_list.push_back(bm);
-				numsEmp++;
-			}
-			break;
-		case 2:
-			std::cout << "\nEnter no u want to update: "; int choiceCase2;
-			std::cin >> choiceCase2;
-			employee_list[choiceCase2]->inputData();
-			break;
-		case 3:
-			std::cout << "\nEnter no u want to remove: "; int choiceCase3;
-			std::cin >> choiceCase3;
-			employee_list.erase(employee_list.begin() + choiceCase3);
-			numsEmp--;
-			break;
-		case 4:
-			for (int i = 0; i < numsEmp; i++) {
-				std::cout << "\nNo " << i << ": \n";
-				employee_list[i]->printInfo();
-			}
-			std::cout << "\n";
-			break;
-		case 0:
-			std::cout << "Exit program!\n";
-			return 0;
-			break;
-		}
-
-	} while (true);
+    return 0;
 }
-
