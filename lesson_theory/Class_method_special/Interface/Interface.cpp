@@ -3,8 +3,7 @@
 // Interface la 1 Abstract class dac biet khi tat ca cac function trong class la pure virtual function
 class Vehicle // <- Interface (Special Abstract class)
 {
-public:
-
+    // khong can khai bao public van ok
     // constructor khong the them virtual o interface
     // khong the khai bao properties o interface
 
