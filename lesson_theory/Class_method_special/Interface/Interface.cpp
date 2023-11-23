@@ -1,7 +1,7 @@
 #include <iostream>
 
 // Interface la 1 Abstract class dac biet khi tat ca cac function trong class la pure virtual function
-class Vehicle // <- Abstract class
+class Vehicle // <- Interface (Special Abstract class)
 {
 public:
 
