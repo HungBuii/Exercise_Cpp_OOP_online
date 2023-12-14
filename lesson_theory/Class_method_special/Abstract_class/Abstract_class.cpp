@@ -4,8 +4,10 @@ class Vehicle // <- Abstract class
 {
 public:
 
-    Vehicle() {
-        
+    Vehicle() { // Luu y trong abstract class neu co lop ke thua thi chung se phai bat buoc ke thua chuan 100% constructor cua lop abstract va khong co constructor nao khac
+                // Vi du chung ta co constructor Vehicle(int n) thi lop Car ke thua Vehicle phai co constructor Car (int n) : Vehicle(n) 
+                // neu chung ta su dung constructor ko tham so la Car() thi se ko duoc boi vi compiler se khong biet su dung constructor nao cho phu hop 
+                // va constructor khong co tham so tuong tu de cung cap gia tri cho cac tham so tren.
     }
 
     virtual void run() = 0; // = 0: pure virtual function.
